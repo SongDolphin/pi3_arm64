@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/mm.h
+
+/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/boot/asm_test.S
+
+/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/boot/boot.S
+mm.h
+/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/boot/mm.h
+
+/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/boot/mm.S
+

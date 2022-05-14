@@ -1,0 +1,1 @@
+/usr/bin/aarch64-linux-gnu-gcc  -g -Wall -nostdlib -nostdinc -Iinclude  -T /home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/linker.ld -o /home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/build/pi3_arm64.elf CMakeFiles/PI3_ARM64.dir/drives/pl_uart.c.o CMakeFiles/PI3_ARM64.dir/kernel/kernel.c.o -o PI3_ARM64 
