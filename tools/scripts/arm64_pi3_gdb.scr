@@ -1,0 +1,9 @@
+file ../../install/pi3_arm64.elf
+target remote localhost:1234
+b _start
+thread 2
+b _start
+thread 3
+b _start
+thread 4
+b _start
