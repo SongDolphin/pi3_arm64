@@ -1,3 +1,0 @@
-/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/build/CMakeFiles/pi3_arm64.elf.dir
-/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/build/CMakeFiles/edit_cache.dir
-/home/song/workstation/github/my_project/raspberry-pi3-mini-arm64-os/build/CMakeFiles/rebuild_cache.dir
