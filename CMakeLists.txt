@@ -4,7 +4,7 @@ enable_language(C ASM)
 project(pi3_arm64.elf)
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install/")
-set(CMAKE_EXE_LINKER_FLAGS "-T ${CMAKE_SOURCE_DIR}/linker.ld -e _start")
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,-Map=pi3_arm64.map -T ${CMAKE_SOURCE_DIR}/linker.ld -e _start")
 set(CMAKE_ASM_FLAGS     "-g -Iinclude -x assembler-with-cpp -MMD")
 set(CMAKE_C_FLAGS       "-DCONFIG_BOARD_PI3B -g -Wall -nostdlib -nostdinc -Iinclude -MMD")
 
