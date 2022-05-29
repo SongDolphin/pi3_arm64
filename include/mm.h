@@ -8,7 +8,10 @@
 #define PAGE_SIZE   			(1 << PAGE_SHIFT)	
 #define SECTION_SIZE			(1 << SECTION_SHIFT)	
 
-#define LOW_MEMORY              	(2 * SECTION_SIZE)
+#define CORE_0_SP              	(2 * SECTION_SIZE)
+#define CORE_1_SP               (CORE_0_SP + 2 * SECTION_SIZE)
+#define CORE_2_SP              	(CORE_1_SP + 2 * SECTION_SIZE)
+#define CORE_3_SP              	(CORE_2_SP + 2 * SECTION_SIZE)
 
 #ifndef __ASSEMBLER__
 

@@ -1,0 +1,36 @@
+From 8b76a0ba89763bb39e81aa146daf195b7c77ca0d Mon Sep 17 00:00:00 2001
+From: "song.wu" <13515643626@163.com>
+Date: Sun, 29 May 2022 16:04:28 +0800
+Subject: [PATCH] update build
+
+---
+ tools/scripts/arm64_pi3_build.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/tools/scripts/arm64_pi3_build.py b/tools/scripts/arm64_pi3_build.py
+index 58c5199..51e5105 100644
+--- a/tools/scripts/arm64_pi3_build.py
++++ b/tools/scripts/arm64_pi3_build.py
+@@ -30,6 +30,10 @@ def Arm64_Pi3_Build_Debug():
+     print('---------------------------------------------------------------------------------------')
+     os.system('qemu-system-aarch64 -machine raspi3b -nographic -kernel ../../install/pi3_arm64.elf -S -s')
+ 
++def Arm64_Pi3_Build_Only():
++    Arm64_CMake_Config_And_Kernel_Build()
++    print('---------------------------------------------------------------------------------------')
++
+ def Arm64_Pi3_Build(argc, argv):
+     print(f'argc = {argc}, argv = {argv}')
+     if argc != 1:
+@@ -38,6 +42,8 @@ def Arm64_Pi3_Build(argc, argv):
+         Arm64_Pi3_Build_Run()
+     elif argc == 1 and argv[1] == "debug":
+         Arm64_Pi3_Build_Debug()
++    elif argc == 1 and argv[1] == "build":
++        Arm64_Pi3_Build_Only()
+     else:
+         Arm64_Pi3_Build_Usage()
+     print(f'finish build')
+-- 
+2.34.1
+

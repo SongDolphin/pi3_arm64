@@ -30,6 +30,10 @@ def Arm64_Pi3_Build_Debug():
     print('---------------------------------------------------------------------------------------')
     os.system('qemu-system-aarch64 -machine raspi3b -nographic -kernel ../../install/pi3_arm64.elf -S -s')
 
+def Arm64_Pi3_Build_Only():
+    Arm64_CMake_Config_And_Kernel_Build()
+    print('---------------------------------------------------------------------------------------')
+
 def Arm64_Pi3_Build(argc, argv):
     print(f'argc = {argc}, argv = {argv}')
     if argc != 1:
@@ -38,6 +42,8 @@ def Arm64_Pi3_Build(argc, argv):
         Arm64_Pi3_Build_Run()
     elif argc == 1 and argv[1] == "debug":
         Arm64_Pi3_Build_Debug()
+    elif argc == 1 and argv[1] == "build":
+        Arm64_Pi3_Build_Only()
     else:
         Arm64_Pi3_Build_Usage()
     print(f'finish build')

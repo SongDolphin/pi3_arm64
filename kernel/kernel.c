@@ -1,22 +1,45 @@
 #include "uart.h"
+#include "smp.h"
 
-extern void ldr_test(void);
+void slaveCore_Init(void);
+void slaveCore_Poll(void);
 
-void my_ldr_str_test(void)
+u32 gLock = LOCK_BUSY;
+
+void masterCore_Init(void)
 {
+	uart_init();
+	spin_lock_init(&gLock);
+}
 
-	ldr_test();
+void masterCore_Poll(void)
+{
+	while (TRUE)
+	{
+		spin_lock_acquire(&gLock);
+		coreInfoShow();
+		spin_lock_release(&gLock);
+	};
+}
+
+void slaveCore_Init(void)
+{
+	slaveCore_Poll();
+}
+
+void slaveCore_Poll(void)
+{
+	while (TRUE)
+	{
+		spin_lock_acquire(&gLock);
+		coreInfoShow();
+		spin_lock_release(&gLock);
+	}
 }
 
 void kernel_main(void)
 {
-	uart_init();
-	uart_send_string("Welcome Pi3!\r\n");
+	masterCore_Init();
 
-	/* my test*/
-	my_ldr_str_test();
-
-	while (1) {
-		uart_send(uart_recv());
-	}
+	masterCore_Poll();
 }
