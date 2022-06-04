@@ -9,6 +9,7 @@ u32 gLock = LOCK_BUSY;
 void masterCore_Init(void)
 {
 	uart_init();
+	timer_init();
 	spin_lock_init(&gLock);
 }
 
