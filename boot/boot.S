@@ -1,5 +1,5 @@
 #include "mm.h"
-#include "sysregs.h"
+#include "asm/sysregs.h"
 
 .section ".text.boot"
 
@@ -29,8 +29,22 @@ _start:
 	b.eq el3_entry
 	b el2_entry
 
-el2_entry:
+el3_entry:
+	ldr x0, =((1<<10) | 1)
+	msr scr_el3, x0
+
+	ldr x0, =0
+	msr sctlr_el3, x0
+
+	ldr x0, =SPSR_EL2
+	msr spsr_el3, x0
 	
+	adr x0, el2_entry
+	msr elr_el3, x0
+	eret
+
+el2_entry:
+	mrs x0, CurrentEL
 	/* The Execution state for EL1 is AArch64 */
 	ldr x0, =HCR_HOST_NVHE_FLAGS
 	msr hcr_el2, x0

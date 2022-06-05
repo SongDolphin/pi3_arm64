@@ -1,7 +1,10 @@
 #include "timer.h"
-#include "base.h"
+#include "asm/base.h"
+#include "asm/arm_local_reg.h"
+#include "io.h"
+#include "uart.h"
 
-#define HZ 250
+#define HZ 20
 #define NSEC_PER_SEC    1000000000L
 
 

@@ -1,3 +1,5 @@
+#ifndef _P_LOCAL_REG_
+#define _P_LOCAL_REG_
 #include "base.h"
 
 /*
@@ -50,4 +52,4 @@
 #define ARM_LOCAL_FRQ_SOURCE1 (ARM_LOCAL_BASE + 0x74)
 #define ARM_LOCAL_FRQ_SOURCE2 (ARM_LOCAL_BASE + 0x78)
 #define ARM_LOCAL_FRQ_SOURCE3 (ARM_LOCAL_BASE + 0x7c)
-
+#endif

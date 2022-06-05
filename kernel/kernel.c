@@ -1,5 +1,7 @@
 #include "uart.h"
 #include "smp.h"
+#include "timer.h"
+#include "irq.h"
 
 void slaveCore_Init(void);
 void slaveCore_Poll(void);
@@ -10,6 +12,7 @@ void masterCore_Init(void)
 {
 	uart_init();
 	timer_init();
+	raw_local_irq_enable();
 	spin_lock_init(&gLock);
 }
 

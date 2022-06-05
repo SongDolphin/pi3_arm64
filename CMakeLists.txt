@@ -22,6 +22,7 @@ message("SOUCER = ${SRC_LIST}")
 add_executable(pi3_arm64.elf ${SRC_LIST})
 
 target_include_directories(pi3_arm64.elf PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(pi3_arm64.elf PRIVATE ${PROJECT_SOURCE_DIR}/include/asm)
 
 add_custom_command(TARGET pi3_arm64.elf POST_BUILD
 					COMMAND aarch64-linux-gnu-objcopy pi3_arm64.elf -O binary pi3_arm64.bin

@@ -97,7 +97,7 @@ kernel_exit:
 	/* 注意在kernel_exit函数里，需要把 刚才保存在sp-8的中断现场的lr寄存器恢复*/
 	ldr x30, [sp], 8
 	eret
-	ret
+//	ret
 
 /*
    处理无效的异常向量

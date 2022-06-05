@@ -17,19 +17,19 @@ static inline void coreInfoShow(void)
 	switch (procId)
 	{
 		case 0:
-			uart_send_string("Welcome Pi3 Core #0 :) \n");
+	//		uart_send_string("Welcome Pi3 Core #0 :) \n");
 			break;
 		case 1:
-			uart_send_string("Welcome Pi3 Core #1 :) \n");
+	//		uart_send_string("Welcome Pi3 Core #1 :) \n");
 			break;
 		case 2:
-			uart_send_string("Welcome Pi3 Core #2 :) \n");
+	//		uart_send_string("Welcome Pi3 Core #2 :) \n");
 			break;
 		case 3:
-			uart_send_string("Welcome Pi3 Core #3 :) \n");
+	//		uart_send_string("Welcome Pi3 Core #3 :) \n");
 			break;
 		default:
-			uart_send_string("ERROR: Unknow Core !!!\n");
+	//		uart_send_string("ERROR: Unknow Core !!!\n");
 			break;
 	}
 }
