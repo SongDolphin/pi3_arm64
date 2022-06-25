@@ -12,7 +12,7 @@ def Arm64_Pi3_Build_Usage():
 
 def Arm64_CMake_Config_And_Kernel_Build():
     print('Start to build target....\n')
-    shutil.rmtree('../../build')
+    os.system('rm -rf ../../build')
     os.mkdir('../../build')
     os.chdir('../../build')
     os.system('cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/tool_chain/aarch64.cmake ..')
@@ -23,12 +23,12 @@ def Arm64_CMake_Config_And_Kernel_Build():
 def Arm64_Pi3_Build_Run():
     Arm64_CMake_Config_And_Kernel_Build()
     print('---------------------------------------------------------------------------------------')
-    os.system('qemu-system-aarch64 -machine raspi3b -nographic -kernel ../../install/pi3_arm64.elf')
+    os.system('qemu-system-aarch64 -machine raspi3 -nographic -kernel ../../install/pi3_arm64.elf')
 
 def Arm64_Pi3_Build_Debug():
     Arm64_CMake_Config_And_Kernel_Build()
     print('---------------------------------------------------------------------------------------')
-    os.system('qemu-system-aarch64 -machine raspi3b -nographic -kernel ../../install/pi3_arm64.elf -S -s')
+    os.system('qemu-system-aarch64 -machine raspi3 -nographic -kernel ../../install/pi3_arm64.elf -S -s')
 
 def Arm64_Pi3_Build_Only():
     Arm64_CMake_Config_And_Kernel_Build()
